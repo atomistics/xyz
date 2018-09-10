@@ -1,0 +1,30 @@
+{
+  "name": "@atomistics/xyz",
+  "version": "1.0.0",
+  "description": "An xyz chemical file format parser and tools for interacting with xyz files.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js | tap-dot"
+  },
+  "bin": {
+    "xyz2json": "./bin/xyz2json",
+    "xyz2js": "./bin/xyz2js"
+  },
+  "keywords": [
+    "chemistry",
+    "atomistics",
+    "format",
+    "xyz"
+  ],
+  "author": "Rye Terrell",
+  "license": "Unlicense",
+  "dependencies": {
+    "@atomistics/elements": "^1.0.0",
+    "ndarray": "^1.0.18"
+  },
+  "devDependencies": {
+    "tap-dot": "^2.0.0",
+    "tape": "^4.9.1"
+  },
+  "repository": "github:atomistics/elements"
+}

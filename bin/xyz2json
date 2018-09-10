@@ -1,0 +1,35 @@
+#!/usr/bin/env node
+
+const fs = require('fs');
+const xyz = require('../index');
+
+const usage = `
+Usage:
+
+  xyz2json inputfile.xyz
+
+  Converts inputfile.xyz to json and prints the result to stdout.
+
+Example:
+
+  xyz2json caffeine.xyz > caffeine.json
+`;
+
+(function main() {
+
+  if (process.argv.length < 3) {
+    console.log(usage);
+    return;
+  }
+
+  input = fs.readFileSync(process.argv[2], 'utf-8');
+
+  const data = xyz(input).map(d => {
+    return {
+      positions: Array.from(d.positions.data),
+      numbers: d.numbers
+    }
+  });
+
+  console.log(JSON.stringify(data));
+})();
